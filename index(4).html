@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <button onclick="show('car')" style="width:50%; height:200px; font-size:50px">Car</button>
+  <button onclick="show('cat')" style="width:50%; height:200px; font-size:50px">Cat</button>
+
+  <img id="image" src="" />
+
+  <script>
+    var db = {}
+
+    fetch("data.json")
+      .then(res => res.json())
+      .then(data => db = data)
+
+    function show(key) {
+      document.getElementById("image").src = db[key]
+    }
+  </script>
+
+</body>
+</html>
